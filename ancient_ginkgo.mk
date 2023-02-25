@@ -24,16 +24,12 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_p.mk)
 $(call inherit-product, device/xiaomi/ginkgo/device.mk)
 
 # Inherit some common Aosp stuff
-TARGET_BOOT_ANIMATION_RES := 1080
-TARGET_INCLUDE_PIXEL_CHARGER := true
-$(call inherit-product, vendor/syberia/common.mk)
-SYBERIA_BUILD_TYPE := OFFICIAL
-TARGET_BOOT_ANIMATION_RES := 1080
-WITH_GMS=true
-TARGET_GAPPS_ARCH := arm64
+$(call inherit-product, vendor/ancient/config/common_full_phone.mk)
+ANCIENT_OFFICIAL=true
+ANCIENT_GAPPS=true
 
 # Device identifier
-PRODUCT_NAME := syberia_ginkgo
+PRODUCT_NAME := ancient_ginkgo
 PRODUCT_DEVICE := ginkgo
 PRODUCT_BRAND := Xiaomi
 PRODUCT_MODEL := Redmi Note 8/8T

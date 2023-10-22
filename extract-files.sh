@@ -62,6 +62,9 @@ function blob_fixup() {
         vendor/lib/miwatermark.so)
             "${PATCHELF}" --add-needed "libwatermark_shim.so" "${2}"
             ;;
+        vendor/lib/android.hardware.camera.provider@2.4-legacy.so)
+            "${PATCHELF}" --add-needed "android.hardware.camera.provider@2.4-legacy.so" "${2}"
+            ;;
         vendor/lib64/libvendor.goodix.hardware.biometrics.fingerprint@2.1.so)
             "${PATCHELF}" --remove-needed "libhidlbase.so" "${2}"
             sed -i "s/libhidltransport.so/libhidlbase-v32.so\x00/" "${2}"
